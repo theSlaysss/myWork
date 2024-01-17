@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Esempio View</title>
+
+</head>
+<body>
+	
+		<div class="col-lg-4" layout:fragment="body">
+		<h2>Utente</h2>
+				<form method="post" th:action="@{/user}" th:object="${utente}">
+					<div class="mb-3">
+						<label class="form-label">Nome</label> <input type="text"
+							class="form-control" placeholder="Inserisci nome" name="nome" th:field="*{nome}"
+							required>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Cognome</label> <input type="text"
+							class="form-control" placeholder="Inserisci cognome"
+							name="cognome" th:field="*{cognome}" required>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Citta</label> <input type="text"
+							class="form-control" placeholder="Inserisci citta" name="citta" th:field="*{citta}"
+							required>
+					</div>
+
+			<div class="mb-3">
+				<label class="form-label">Età</label> <input type="number"
+					class="form-control" placeholder="Inserisci età"
+					name="eta" th:field="*{eta}" required>
+			</div>
+
+			<div class="mb-3">
+						<label class="form-label">Username</label> <input type="text"
+							class="form-control" placeholder="Inserisci username"
+							name="username" th:field="*{username}" required>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Password</label> <input type="password"
+							class="form-control" placeholder="Inserisci password"
+							name="pwd" th:field="*{pwd}" required>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Salva</button>
+				</form>
+
+			</div>
+
+
+
+</body>
+</html>

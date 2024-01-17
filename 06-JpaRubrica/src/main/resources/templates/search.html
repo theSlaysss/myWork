@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Utenti</title>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="col-lg-4" layout:fragment="body">
+		<h2>Utenti</h2>
+		<form method="post"th:action="@{/user/filtro}">
+			<div class="mb-3">
+				<label class="form-label">Eta</label> <input type="number"
+					class="form-control" placeholder="Inserisci eta" name="eta">
+					</div>
+					<button type="submit" class="btn btn-primary">Ricerca</button>
+		</form>
+		<table th:if="${not #lists.isEmpty(utenti)}" class="table">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Cognome</th>
+					<th>Citta</th>
+					<th>Username</th>
+					<th>Eta</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ut:${utenti}">
+					<td th:text="${ut.nome}"></td>
+					<td th:text="${ut.cognome}"></td>
+					<td th:text="${ut.citta}"></td>
+					<td th:text="${ut.username}"></td>
+					<td th:text="${ut.eta}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1">
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+<title></title>
+</head>
+<body>
+ <div th:replace="~{fragments/header-footer::navbar}"></div>
+ <div class="container">
+   <div class="row" layout:fragment="body"></div>
+ </div>
+ 
+ 
+ 
+ <div th:replace="~{fragments/header-footer::footer}"></div>
+</body>
+</html>

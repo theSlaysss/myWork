@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Esempio View</title>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+  
+ 
+    <div class="col-lg-4" layout:fragment="body">
+    <h2>Utenti</h2>
+    <table th:if="${not #lists.isEmpty(utenti)}" class="table">
+    <thead>
+      <tr>
+    	<th>Nome</th>
+    	<th>Cognome</th>
+    	<th>Città</th>
+    	<th>Username</th>
+    	<th>Età</th>
+      </tr>
+     </thead>
+     <tbody>
+     	<tr th:each="ut:${utenti}">
+     		<td th:text="${ut.nome}"></td>
+     		<td th:text="${ut.cognome}"></td>
+     		<td th:text="${ut.citta}"></td>
+     		<td th:text="${ut.username}"></td>
+     		<td th:text="${ut.eta}"></td>
+     	</tr>
+     	
+     </tbody>
+    
+   
+  </table>
+</div>
+</body>
+</html>
